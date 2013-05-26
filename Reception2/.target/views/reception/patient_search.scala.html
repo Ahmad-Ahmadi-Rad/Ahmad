@@ -1,0 +1,285 @@
+@(patients: List[Patient], t: String, k:String)
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("New Person"){
+
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="shape.css" rel="stylesheet" type="text/css" />
+		
+		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+		<meta name="author" content="MRT www.Win2Farsi.com" />
+		   
+		<title>HomePage</title>
+		    
+	 <style>
+		    body{
+		        background-image: url(@routes.Assets.at("images/pattern.png"));
+		        background-repeat: repeat;
+		    }
+		    div#rightAside_container{
+		        position: absolute;
+		        margin-left: 980px; 
+		    }
+		    div#menu{
+		        background-image: url(@routes.Assets.at("images/btn_blank.png"));
+		        background-repeat: repeat-x;
+		        width: 1400px;
+		        height: 40px;
+		        text-align: center;
+		    }
+		 
+		    div#form{
+		        background-image: url(@routes.Assets.at("images/1.png"));
+		        background-repeat:repeat;
+		        width: 950px;
+		        height: 900px;
+		    }
+		    div#right_container{
+		        background-image: url(@routes.Assets.at("images/bg-nav.jpg"));
+		        background-repeat: repeat-y;
+		        width: 280px;
+		        height: 500px;
+		        margin-right: 0px;
+		
+		    }
+		    div#image_sub{
+		        margin-left: 5px;
+		        margin-top: 5px;;
+		    }
+		   
+		    div#title{
+		            position: absolute;
+		            color: #0000A0;
+		            margin-left: 400px;
+		            margin-bottom: 44444px; 
+		    }
+		    div#logoa{
+		        position: absolute;
+		        margin-right: 33333px;
+		    }
+		    div#header{
+		        
+		    }
+	 </style>
+</head>
+
+<body>
+    <header >
+		  	<div id="header" style="left: 20px;width: 900px;height: 100px;position: absolute;">
+		       
+		        <div id="header" style="left: 20px; width: 900px;height: 100px;position: absolute;">
+			      <div id="logo" style="left: 20px;width: 180px;height: 120px; position: absolute;"><img src="@routes.Assets.at("images/LogoFirst.jpg")" alt="Logo" width="180"  height="120"/></div>
+			      <div id="title" style="top:40px; left: 20px;height:100px;width: 700px;position: absolute;"><h1 align="center">(نرم افزار مدیریت کلینیک و مراکز درمانی (آبنوس</h1></div>
+			    </div>
+			    
+		      	<div id="menu"  align="center" style="top:150px;left: 20px;width: 1230px;height:60px;position: absolute;">
+		      	
+								 <a href="Home page">
+		                       	 	<img src="@routes.Assets.at("images/home.png")" width="20" height="20"/>صحفه اصلی</a>
+									<a href="Drug Stroe">
+		                            <img src="@routes.Assets.at("images/tb.jpg")" width="30" height="20" dir="rtl"/> 
+		                            دارو خانه</a>
+		                            <a href="Reserved Time">
+		                            <img src="@routes.Assets.at("images/res.png")" width="20" height="20" />رزرو وقت</a>
+		        
+		                            <a href="Operation"><img src="@routes.Assets.at("images/logo.jpg")" width="20" height="20" />
+		                            نسای ولادی و عملیات</a>
+		        
+		                            <a href="Bed">
+		                            <img src="@routes.Assets.at("images/logo.jpg")" width="20" height="20" />
+		                            بستر</a>
+		        
+		                            <a href="lab">
+		                            <img src="@routes.Assets.at("images/lab.png")" width="20" height="20" />
+		                            آزمایشگاه</a>
+		        
+		                            <a href="Ambualance">
+		                            <img src="@routes.Assets.at("images/amb.png")" width="20" height="20" />
+		                            آمبولانس</a>
+		            
+		                            <a href="Acounting">
+		                            <img src="@routes.Assets.at("images/acu.png")" width="20" height="20" />
+		                            حسابداری</a>
+		        
+		                            <a href="Office"><img src="@routes.Assets.at("images/offi.gif")" width="20" height="20" />
+		                            اداره</a>
+		         
+		                            <a href="Recp">
+		                            <img src="@routes.Assets.at("images/resp.png")" width="20" height="20" />
+		                            پذیرش</a>
+		       	</div>        
+		    </div>
+    </header>
+   
+     <div id="main_container"  style="top: 220px; left: 50px;width: 1230px;height: 800px;position: absolute;">
+      
+	       <div id="form" style="height:900px; width:950px">
+	            <div id="list" style="width:950px; height:850px">
+	            	 <h3>@patients.size() patients(s)</h3>
+	            
+		            <table border="1" class="patients" align="center" style="width:900px; height:900px">
+				            <thead>
+				                <tr>	
+				               
+				                		 <td>
+				  							<b>اکشن</b>
+				  						</td>
+				                        <td>
+				  							<b>حالت پرداخت</b>
+				                        </td>
+				                        <td>
+											<b>حق وزيت</b>
+				                        </td>
+				                        <td>
+											<b>اي دي داکتر</b>
+				                        </td>
+				                         <td>
+											<b>داکترمعالج</b>
+				                        </td>
+				                         <td>
+											<b>بخش</b>
+				                        </td>                        
+				  						
+				                        <td>
+											<b>تاريخ</b>
+				                        </td>
+				                        <td>
+											<b>سن</b>
+				                        </td>
+				                         <td>
+											<b>تلفن</b>
+				                        </td>
+				                         <td>
+											<b>جنسيت</b>
+				                        </td>
+				                          <td>
+											<b>نام پدر</b>
+				                        </td>
+				                         <td>
+											<b>نام بيمار</b>
+				                        </td>                        
+				  						
+				                        <td>
+											<b>اي دي بيمار</b>
+				                        </td>
+				                        <td>
+											<b>شماره</b>
+				                        </td>
+				                    </tr>
+				            </thead>
+		            
+				            <tbody>
+				        		 @for(patient <- patients) {
+				                    <tr>
+				                    	<td>
+				                    		<a href="@routes.Application.delete(patient.id)" class="btn"><img src="@routes.Assets.at("images/u523_normal.png")"/></a></br>
+				  							<a href="@routes.Application.update(patient.id)" class="btn"><img src="@routes.Assets.at("images/res.png")"/></a>
+				                        
+				                    	</td>
+				                        <td>
+				  							@patient.payment
+				                        </td>
+				                        <td>
+											@patient.visit
+				                        </td>
+				                        <td>
+											@patient.doctorId
+				                        </td>
+				                         <td>
+											@patient.doctorName
+				                        </td>
+				                         <td>
+											@patient.department
+				                        </td>
+				                        <td>
+				  							@patient.date.format("mm dd yyyy")
+				                        </td>
+				                        <td>
+											@patient.phone
+				                        </td>
+				                        <td>
+											@patient.age
+				                        </td>
+				                         <td>
+											@patient.fatherName
+				                        </td>
+				                         <td>
+											@patient.firstName
+				                        </td>
+				                         <td>
+											@patient.id
+				                        </td>
+				                      
+				                         <td>
+										@for(i<- 1 to patients.size()){
+											println(i)
+				                        </td>
+				                    </tr>
+				                }  }
+				            </tbody>
+		           
+		       			</table>
+	      		</div>
+	        
+	        	<div id="searching" style="width:500px; height:50px">
+			        	<table>
+			 			<form action="@routes.Application.search()" method="get">
+			 				<tr>
+				 				<td width="5%">
+							 		<select id="type" name="type">
+										<option 
+											value="name">اي دي بيمار</option>
+										<option 
+											 value="last_name">اسم بيمار</option>
+										<option 
+											 value="phone">نام پدر</option>
+											 <option 
+											value="name">جنسيت</option>
+										<option 
+											 value="last_name">تلفن</option>
+										<option 
+											 value="phone">بخش</option>
+											 <option 
+											 value="phone">داکتر معالچ</option>
+											 <option 
+											value="name">اي دي داکتر</option>
+										<option 
+											 value="last_name">حق وزيت</option>
+										<option 
+											 value="phone">حالت پرداخت</option>
+									</select>
+								</td>
+								<td width="90%">
+									<input id="key" name="key" type="text" style="width:100%" value="@k"/>
+								</td>
+								<td width="5%" valign="top" align="right">
+									<input class="btn btn-success" type="submit" value="Submit" />
+								</td>
+							</tr>
+						</form>
+						</table>
+					</div>
+			</div>
+	    </div>
+	        
+        <div id="rightAside_container" style="width: 300px; height: 900px;">
+	        <div id="right_container" style="">
+	            <div id="image_sub" style="top: 10px;"><img src="@routes.Assets.at("images/12132739-hospital-staff-stood-at-reception.jpg")" alt="Photo" width="260" height="200" align="center"/></div>
+	            <div id="submenu" style="righpx; top: 40px; text-align: center;">
+	    		<a  href="@routes.Application.create()">فرم پذیرش مراجعین</a> <br />
+	    		<a href="@routes.Application.index()">لیست مراجعین</a> 
+	    		</div>
+	         </div>
+        </div>
+     
+	  <div style="top: 900px; width: 900px; height: 200px; left:250px;  align: center; position: absolute;" align="center">
+		    <footer>
+		       <p align="center"> 2013 Clinic Management System. &copy;All Rights Reserved. | <a href="http://www.Khadhragmail.com">www.Khadhragmail.com</a></p>
+		    </footer>
+	  </div>
+  
+</body>
+</html>
+}

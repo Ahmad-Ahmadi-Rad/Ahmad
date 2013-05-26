@@ -1,0 +1,113 @@
+@(patients: List[Patient])
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Print List of Patients"){
+
+ <div id="list" style="width:950px; height:850px; " align="center">
+             <h3>@patients.size() patients(s)</h3>
+           
+            <table border="1" class="patients" align="center" style="width:900px; height:900px">
+	            <thead>
+	                <tr>	
+	                        <td>
+	  							<b>حالت پرداخت</b>
+	                        </td>
+	                        <td>
+								<b>حق وزيت</b>
+	                        </td>
+	                        <td>
+								<b>اي دي داکتر</b>
+	                        </td>
+	                         <td>
+								<b>داکترمعالج</b>
+	                        </td>
+	                         <td>
+								<b>بخش</b>
+	                        </td>                        
+	  						
+	                        <td>
+								<b>تاريخ</b>
+	                        </td>
+	                        <td>
+								<b>سن</b>
+	                        </td>
+	                         <td>
+								<b>تلفن</b>
+	                        </td>
+	                         <td>
+								<b>جنسيت</b>
+	                        </td>
+	                          <td>
+								<b>نام پدر</b>
+	                        </td>
+	                         <td>
+								<b>نام بيمار</b>
+	                        </td>                        
+	  						
+	                        <td>
+								<b>اي دي بيمار</b>
+	                        </td>
+	                        <td>
+								<b>شماره</b>
+	                        </td>
+	                   </tr>
+	            </thead>
+	            
+	            <tbody>
+	       			  @for(patient <- patients) {
+	                    <tr>
+	                        <td>
+	  							@patient.payment
+	                        </td>
+	                        <td>
+								@patient.visit
+	                        </td>
+	                        <td>
+								@patient.doctorId
+	                        </td>
+	                         <td>
+								@patient.doctorName
+	                        </td>
+	                         <td>
+								@patient.department
+	                        </td>
+	                        <td>
+	  							@patient.date.format("mm dd yyyy")
+	                        </td>
+	                        <td>
+								@patient.phone
+	                        </td>
+	                        <td>
+								@patient.age
+	                        </td>
+	                         <td>
+								@patient.fatherName
+	                        </td>
+	                         <td>
+								@patient.firstName
+	                        </td>
+	                         <td>
+								@patient.id
+	                        </td>
+	                      
+	                         <td>
+							@for(i<- 1 to patients.size()){
+								println(i)
+	                        </td>
+	                    </tr>
+	                }  }
+	            </tbody>
+           
+        </table>
+</div>
+<div style="width:50px; height:30px; ">
+     <SCRIPT LANGUAGE="JavaScript">
+                if (window.print) {
+                document.write('<form> '
+                + '<input style="width: 50px; height: 30px; color: maroon;" type=button name=print value="چاپ" '
+                + 'onClick="javascript:window.print()"></form>');
+                }// End -->
+      </script>
+</div>
+}

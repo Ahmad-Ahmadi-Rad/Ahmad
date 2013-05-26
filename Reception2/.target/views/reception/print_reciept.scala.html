@@ -1,0 +1,102 @@
+@(patient: Patient)
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Print Reciept of Patient"){
+
+ <div id="list" style="width:950px; height:850px; " >
+      <table>
+      		<tr>
+      			<td colspan="2">
+      				<h1>کلينيک خصوصي قدس </h1>
+      			</td>
+      		</tr>
+      		<tr>
+      			<td colspan="2">
+      				<h3>www.QodsClinic.com</h3>
+      			</td>
+      		</tr>
+      		<tr>
+      			<td>
+      				@patient.firstName
+      			</td>
+      			<td>
+      				<b>اسم بيمار</b>
+      			</td>
+      		</tr>
+      		<tr>
+      			<td>
+      				@patient.fatherName
+      			</td>
+      			<td>
+      				<b>نام پدر</b>
+      			</td>
+      		</tr>
+      		<tr>
+      			<td>
+      				@patient.id
+      			</td>
+      			<td>
+      				<b>اي دي بيمار</b>
+      			</td>
+      		</tr>
+      		<tr>
+      			<td>
+      				@patient.date
+      			</td>
+      			<td>
+      				<b>تاريخ</b>
+      			</td>
+      		</tr>
+      		<tr>
+      			<td>
+      				@patient.department
+      			</td>
+      			<td>
+      				<b>بخش</b>
+      			</td>
+      		</tr>
+      		<tr>
+      			<td>
+      				@patient.doctorName
+      			</td>
+      			<td>
+      				<b>داکتر معالچ</b>
+      			</td>
+      		</tr>
+      		<tr>
+      			<td>
+      				@patient.doctorId
+      			</td>
+      			<td>
+      				<b>اي دي داکتر</b>
+      			</td>
+      		</tr>
+      		<tr>
+      			<td>
+      				@patient.visit
+      			</td>
+      			<td>
+      				<b>حق وزيت</b>
+      			</td>
+      		</tr>
+      		<tr>
+      			<td>
+      				@patient.payment
+      			</td>
+      			<td>
+      				<b>حالت پرداخت</b>
+      			</td>
+      		</tr>
+      </table
+ </div>
+ <div>
+           <SCRIPT LANGUAGE="JavaScript">
+                if (window.print) {
+                document.write('<form> '
+                + '<input style="width: 50px; height: 30px; color: maroon;" type=button name=print value="چاپ" '
+                + 'onClick="javascript:window.print()"></form>');
+                }// End -->
+                </script>
+ </div>
+}
